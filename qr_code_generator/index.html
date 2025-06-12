@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бесплатный генератор QR-кодов. Создавайте QR-коды для ссылок, текста и многого другого.">
+    <meta name="theme-color" content="#667eea">
+    <title>QR Code Generator - Создавайте QR-коды бесплатно</title>
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="animated-background">
+        <!-- Оптимизируем плавающие QR-коды через JavaScript -->
+    </div>
+
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">QR Generator</a>
+            <nav>
+                <a href="#features">Возможности</a>
+                <a href="#about">О сервисе</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="ad-container">
+            <div class="qr-pattern"></div>
+            <div class="floating-icons"></div>
+            <div class="qr-dots"></div>
+            <div class="qr-corner qr-corner-tl"></div>
+            <div class="qr-corner qr-corner-tr"></div>
+            <div class="qr-corner qr-corner-bl"></div>
+            <div class="qr-corner qr-corner-br"></div>
+        </div>
+
+        <div class="container">
+            <h1 class="section-title">Генератор QR-кодов</h1>
+            <div class="form-group">
+                <input type="text" id="url-input" placeholder="Введите текст или URL">
+            </div>
+            <button onclick="generateQR()">Создать QR-код</button>
+            <div id="qrcode"></div>
+            <button id="download-btn" onclick="downloadQR()" style="display: none;">Скачать QR-код</button>
+            <div id="loading" class="loading">Генерация QR-кода...</div>
+            <div id="error" class="error"></div>
+        </div>
+        
+        <div class="container" id="features">
+            <h2 class="section-title">Возможности сервиса</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🔗 Ссылки</h3>
+                    <p>Создавайте QR-коды для веб-сайтов и URL-адресов</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📝 Текст</h3>
+                    <p>Генерируйте QR-коды для любого текстового содержания</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Контакты</h3>
+                    <p>Создавайте QR-визитки с контактной информацией</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📍 Геолокация</h3>
+                    <p>Делитесь местоположением через QR-код</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="about">
+            <h2 class="section-title">О нашем сервисе</h2>
+            <div class="about-content">
+                <p>QR Generator - это современный инструмент для создания QR-кодов, разработанный с учетом потребностей пользователей в 2025 году. Наш сервис предоставляет:</p>
+                <ul>
+                    <li>Мгновенную генерацию QR-кодов</li>
+                    <li>Высокое качество изображения</li>
+                    <li>Поддержку различных форматов данных</li>
+                    <li>Бесплатное использование без ограничений</li>
+                    <li>Современный и удобный интерфейс</li>
+                </ul>
+                <p>Используйте наш генератор QR-кодов для бизнеса, образования или личных целей. Создавайте уникальные QR-коды за считанные секунды!</p>
+            </div>
+        </div>
+
+        <div class="container" id="contact">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-content">
+                <p>Есть вопросы или предложения? Мы всегда рады помочь!</p>
+                <div class="contact-info">
+                    <p>📧 Email: support@qrgenerator.com</p>
+                    <p>📱 Telegram: @qrgenerator</p>
+                    <p>💬 WhatsApp: +7 (999) 123-45-67</p>
+                </div>
+                <p>Время работы поддержки: 24/7</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О сервисе</h3>
+                <p>Бесплатный генератор QR-кодов для любых целей. Создавайте QR-коды быстро и легко.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Полезные ссылки</h3>
+                <a href="#privacy">Политика конфиденциальности</a>
+                <a href="#terms">Условия использования</a>
+                <a href="#faq">Часто задаваемые вопросы</a>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Email: support@qrgenerator.com</p>
+                <p>Telegram: @qrgenerator</p>
+                <p>WhatsApp: +7 (999) 123-45-67</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 QR Generator. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+    <script src="floating-icons.js"></script>
+    <script src="qr-pet.js"></script>
+</body>
+</html> 
