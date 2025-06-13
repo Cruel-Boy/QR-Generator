@@ -80,28 +80,28 @@ function checkQRCodeLibrary() {
     }
 }
 
-// Массив доступных рамок
-const qrFrames = [
-    { name: 'Электрическая', class: 'qr-frame-electric' },
-    { name: 'Неоновая', class: 'qr-frame-neon' },
-    { name: 'Кибер', class: 'qr-frame-cyber' },
-    { name: 'Градиентная', class: 'qr-frame-gradient' },
-    { name: 'Пиксельная', class: 'qr-frame-pixel' },
-    { name: 'Голографическая', class: 'qr-frame-holographic' },
-    { name: 'Ретро', class: 'qr-frame-retro' },
-    { name: 'Минималистичная', class: 'qr-frame-minimal' },
-    { name: 'Космическая', class: 'qr-frame-space' },
-    { name: 'Угловая', class: 'qr-frame-corners' },
-    { name: 'Металлическая', class: 'qr-frame-metal' },
-    { name: 'Органическая', class: 'qr-frame-organic' },
-    { name: 'Акварельная', class: 'qr-frame-watercolor' },
-    { name: 'С тенью', class: 'qr-frame-shadow' },
-    { name: 'С узором', class: 'qr-frame-pattern' },
-    { name: 'Глитч', class: 'qr-frame-glitch' },
-    { name: 'Волны', class: 'qr-frame-waves' },
-    { name: 'Радуга', class: 'qr-frame-rainbow' },
-    { name: 'Точки', class: 'qr-frame-dots' }
-];
+// // Массив доступных рамок
+// const qrFrames = [
+//     { name: 'Электрическая', class: 'qr-frame-electric' },
+//     { name: 'Неоновая', class: 'qr-frame-neon' },
+//     { name: 'Кибер', class: 'qr-frame-cyber' },
+//     { name: 'Градиентная', class: 'qr-frame-gradient' },
+//     { name: 'Пиксельная', class: 'qr-frame-pixel' },
+//     { name: 'Голографическая', class: 'qr-frame-holographic' },
+//     { name: 'Ретро', class: 'qr-frame-retro' },
+//     { name: 'Минималистичная', class: 'qr-frame-minimal' },
+//     { name: 'Космическая', class: 'qr-frame-space' },
+//     { name: 'Угловая', class: 'qr-frame-corners' },
+//     { name: 'Металлическая', class: 'qr-frame-metal' },
+//     { name: 'Органическая', class: 'qr-frame-organic' },
+//     { name: 'Акварельная', class: 'qr-frame-watercolor' },
+//     { name: 'С тенью', class: 'qr-frame-shadow' },
+//     { name: 'С узором', class: 'qr-frame-pattern' },
+//     { name: 'Глитч', class: 'qr-frame-glitch' },
+//     { name: 'Волны', class: 'qr-frame-waves' },
+//     { name: 'Радуга', class: 'qr-frame-rainbow' },
+//     { name: 'Точки', class: 'qr-frame-dots' }
+// ];
 
 // // Создаем селектор рамок
 // function createFrameSelector() {
