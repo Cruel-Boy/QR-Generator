@@ -103,72 +103,72 @@ const qrFrames = [
     { name: 'Точки', class: 'qr-frame-dots' }
 ];
 
-// Создаем селектор рамок
-function createFrameSelector() {
-    const qrContainer = document.getElementById('qrcode');
-    const frameSelector = document.createElement('div');
-    frameSelector.className = 'frame-selector';
-    frameSelector.style.cssText = `
-        margin-top: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        padding: 15px;
-        background: rgba(0, 24, 48, 0.3);
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-    `;
+// // Создаем селектор рамок
+// function createFrameSelector() {
+//     const qrContainer = document.getElementById('qrcode');
+//     const frameSelector = document.createElement('div');
+//     frameSelector.className = 'frame-selector';
+//     frameSelector.style.cssText = `
+//         margin-top: 20px;
+//         display: grid;
+//         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+//         gap: 10px;
+//         padding: 15px;
+//         background: rgba(0, 24, 48, 0.3);
+//         border-radius: 10px;
+//         backdrop-filter: blur(10px);
+//     `;
 
-    const title = document.createElement('h3');
-    title.textContent = 'Выберите рамку';
-    title.style.cssText = `
-        grid-column: 1 / -1;
-        text-align: center;
-        color: white;
-        margin-bottom: 15px;
-    `;
-    frameSelector.appendChild(title);
+//     const title = document.createElement('h3');
+//     title.textContent = 'Выберите рамку';
+//     title.style.cssText = `
+//         grid-column: 1 / -1;
+//         text-align: center;
+//         color: white;
+//         margin-bottom: 15px;
+//     `;
+//     frameSelector.appendChild(title);
 
-    qrFrames.forEach(frame => {
-        const button = document.createElement('button');
-        button.textContent = frame.name;
-        button.className = 'frame-button';
-        button.style.cssText = `
-            padding: 10px;
-            border: 1px solid var(--electric-blue);
-            border-radius: 8px;
-            background: rgba(52, 152, 219, 0.2);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        `;
+//     qrFrames.forEach(frame => {
+//         const button = document.createElement('button');
+//         button.textContent = frame.name;
+//         button.className = 'frame-button';
+//         button.style.cssText = `
+//             padding: 10px;
+//             border: 1px solid var(--electric-blue);
+//             border-radius: 8px;
+//             background: rgba(52, 152, 219, 0.2);
+//             color: white;
+//             cursor: pointer;
+//             transition: all 0.3s ease;
+//         `;
         
-        button.addEventListener('mouseover', () => {
-            button.style.background = 'rgba(52, 152, 219, 0.4)';
-            button.style.transform = 'translateY(-2px)';
-        });
+//         button.addEventListener('mouseover', () => {
+//             button.style.background = 'rgba(52, 152, 219, 0.4)';
+//             button.style.transform = 'translateY(-2px)';
+//         });
         
-        button.addEventListener('mouseout', () => {
-            button.style.background = 'rgba(52, 152, 219, 0.2)';
-            button.style.transform = 'translateY(0)';
-        });
+//         button.addEventListener('mouseout', () => {
+//             button.style.background = 'rgba(52, 152, 219, 0.2)';
+//             button.style.transform = 'translateY(0)';
+//         });
 
-        button.addEventListener('click', () => {
-            const qrImage = qrContainer.querySelector('img');
-            if (qrImage) {
-                // Удаляем все предыдущие классы рамок
-                qrFrames.forEach(f => qrImage.classList.remove(f.class));
-                // Добавляем базовый класс рамки и выбранный стиль
-                qrImage.classList.add('qr-frame', frame.class);
-            }
-        });
+//         button.addEventListener('click', () => {
+//             const qrImage = qrContainer.querySelector('img');
+//             if (qrImage) {
+//                 // Удаляем все предыдущие классы рамок
+//                 qrFrames.forEach(f => qrImage.classList.remove(f.class));
+//                 // Добавляем базовый класс рамки и выбранный стиль
+//                 qrImage.classList.add('qr-frame', frame.class);
+//             }
+//         });
 
-        frameSelector.appendChild(button);
-    });
+//         frameSelector.appendChild(button);
+//     });
 
-    // Вставляем селектор после контейнера с QR-кодом
-    qrContainer.parentNode.insertBefore(frameSelector, qrContainer.nextSibling);
-}
+//     // Вставляем селектор после контейнера с QR-кодом
+//     qrContainer.parentNode.insertBefore(frameSelector, qrContainer.nextSibling);
+// }
 
 // Вызываем функцию создания селектора после генерации QR-кода
 const originalGenerateQR = window.generateQR;
